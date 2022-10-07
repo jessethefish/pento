@@ -1,9 +1,9 @@
-# Pento
+# Pento Game from Programming LiveView Text
 
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup` (after moving all migration files in migrations/backup into migrations) 
+  * Create and migrate your database with `mix ecto.setup` 
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4010/game/medium`](http://localhost:4010/game/medium) from your browser.
