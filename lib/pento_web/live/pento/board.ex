@@ -6,11 +6,16 @@ defmodule PentoWeb.Pento.Board do
   import PentoWeb.Pento.Colors
 
   def update(%{puzzle: puzzle, id: id}, socket) do
-    {:ok,
+    socket =
       socket
       |> assign_params(id, puzzle)
       |> assign_board()
       |> assign_shapes()
+
+    # IO.inspect(%{update_socket: socket.assigns.board})
+
+    {:ok,
+      socket
     }
   end
 
@@ -34,7 +39,7 @@ defmodule PentoWeb.Pento.Board do
   def render(assigns) do
     ~H"""
     <div id={ @id } phx-window-keydown="key" phx-target={ @myself }>
-      <Canvas.draw viewBox="0 0 200 70">
+      <Canvas.draw viewBox="0 0 200 70" >
         <%= for shape <- @shapes do %>
           <Shape.draw
             points={ shape.points }

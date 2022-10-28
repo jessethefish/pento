@@ -24,9 +24,11 @@ defmodule Pento.Game.Board do
   end
 
   def to_shapes(board) do
+    IO.puts("hi there")
     board_shape = to_shape(board)
     pento_shapes =
       [board.active_pento|board.completed_pentos]
+      |> IO.inspect
       |> Enum.reverse
       |> Enum.filter(& &1)
       |> Enum.map(&Pentomino.to_shape/1)

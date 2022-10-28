@@ -1,7 +1,10 @@
 defmodule PentoWeb.Pento.Canvas do
   use Phoenix.Component
 
+
   def draw(assigns) do
+    IO.inspect({:assigns, assigns})
+
     ~H"""
     <svg viewBox={ @viewBox }>
       <defs>
